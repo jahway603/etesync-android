@@ -147,7 +147,7 @@ class App : Application() {
     }
 
     /** Init the preferences version of the app.
-     * This is used to initialise the first version if not alrady set.  */
+     * This is used to initialise the first version if not already set.  */
     private fun initPrefVersion() {
         val prefs = getSharedPreferences("app", Context.MODE_PRIVATE)
         if (prefs.getInt(PREF_VERSION, 0) == 0) {
@@ -250,6 +250,7 @@ class App : Application() {
         val PREFER_TASKSORG = "preferTasksOrg"
         val FORCE_LANGUAGE = "forceLanguage"
         val CHANGE_NOTIFICATION = "show_change_notification"
+        val TOGGLE_DARKTHEME = "toggle_darktheme"
 
         val OVERRIDE_PROXY_HOST_DEFAULT = "localhost"
         val OVERRIDE_PROXY_PORT_DEFAULT = 8118

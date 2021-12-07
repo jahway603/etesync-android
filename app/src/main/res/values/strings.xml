@@ -138,6 +138,7 @@
     <string name="app_settings_force_language">Force Language</string>
     <string name="app_settings_force_language_default">Auto</string>
     <string name="app_settings_change_notification">Show change notifications</string>
+    <string name="app_settings_toggle_darktheme">Toggle Dark Theme</string>
 
     <!-- AccountActivity -->
     <string name="account_synchronize_now">Synchronize now</string>

@@ -24,6 +24,10 @@
             android:title="@string/app_settings_reset_hints"
             android:summary="@string/app_settings_reset_hints_summary"/>
 
+        <SwitchPreferenceCompat
+            android:key="toggle_darktheme"
+            android:title="@string/app_settings_toggle_darktheme"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/app_settings_sync">

@@ -148,6 +148,9 @@ class AppSettingsActivity : BaseActivity() {
             val prefChangeNotification = findPreference("show_change_notification") as SwitchPreferenceCompat
             prefChangeNotification.isChecked = context!!.defaultSharedPreferences.getBoolean(App.CHANGE_NOTIFICATION, true)
 
+            val prefToggleDarkTheme = findPreference("toggle_darktheme") as SwitchPreferenceCompat
+            prefToggleDarkTheme.isChecked = context!!.defaultSharedPreferences.getBoolean(App.TOGGLE_DARKTHEME, false)
+
             initSelectLanguageList()
         }
 
@@ -179,6 +182,7 @@ class AppSettingsActivity : BaseActivity() {
             if (CustomCertManager.resetCertificates(activity!!))
                 Snackbar.make(view!!, getString(R.string.app_settings_reset_certificates_success), Snackbar.LENGTH_LONG).show()
         }
+
 
         private inner class LanguageTask internal constructor(private val mListPreference: ListPreference) : AsyncTask<Void, Void, LanguageUtils.LocaleList>() {
 
