@@ -138,7 +138,17 @@
     <string name="app_settings_force_language">Force Language</string>
     <string name="app_settings_force_language_default">Auto</string>
     <string name="app_settings_change_notification">Show change notifications</string>
-    <string name="app_settings_toggle_darktheme">Toggle Dark Theme</string>
+    <string name="pref_key_night" translatable="false">key_night_mode</string>
+    <string name="pref_night_title">Night mode</string>
+    <string name="pref_night_summary">Select a dark or light theme.</string>
+    <string name="pref_night_dialog">Set Night mode</string>
+    <string name="pref_night_auto" translatable="false">auto</string>
+    <string name="pref_night_on" translatable="false">on</string>
+    <string name="pref_night_off" translatable="false">off</string>
+    <string name="night_mode_auto">Automatic</string>
+    <string name="night_mode_on">Night mode</string>
+    <string name="night_mode_off">Day mode</string>
+
 
     <!-- AccountActivity -->
     <string name="account_synchronize_now">Synchronize now</string>

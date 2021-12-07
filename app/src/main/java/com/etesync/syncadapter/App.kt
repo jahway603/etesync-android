@@ -250,7 +250,6 @@ class App : Application() {
         val PREFER_TASKSORG = "preferTasksOrg"
         val FORCE_LANGUAGE = "forceLanguage"
         val CHANGE_NOTIFICATION = "show_change_notification"
-        val TOGGLE_DARKTHEME = "toggle_darktheme"
 
         val OVERRIDE_PROXY_HOST_DEFAULT = "localhost"
         val OVERRIDE_PROXY_PORT_DEFAULT = 8118

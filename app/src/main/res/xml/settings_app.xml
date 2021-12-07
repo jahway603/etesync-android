@@ -24,9 +24,14 @@
             android:title="@string/app_settings_reset_hints"
             android:summary="@string/app_settings_reset_hints_summary"/>
 
-        <SwitchPreferenceCompat
-            android:key="toggle_darktheme"
-            android:title="@string/app_settings_toggle_darktheme"/>
+        <ListPreference
+            android:defaultValue="@string/pref_night_auto"
+            android:dialogTitle="@string/pref_night_dialog"
+            android:entries="@array/night_mode"
+            android:entryValues="@array/night_mode_value"
+            android:key="@string/pref_key_night"
+            android:summary="@string/pref_night_summary"
+            android:title="@string/pref_night_title" />
 
     </PreferenceCategory>
 

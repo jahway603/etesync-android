@@ -12,7 +12,10 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.preference.*
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.BuildCompat
 import at.bitfire.cert4android.CustomCertManager
 import com.etesync.syncadapter.App
 import com.etesync.syncadapter.BuildConfig
@@ -148,8 +151,9 @@ class AppSettingsActivity : BaseActivity() {
             val prefChangeNotification = findPreference("show_change_notification") as SwitchPreferenceCompat
             prefChangeNotification.isChecked = context!!.defaultSharedPreferences.getBoolean(App.CHANGE_NOTIFICATION, true)
 
-            val prefToggleDarkTheme = findPreference("toggle_darktheme") as SwitchPreferenceCompat
-            prefToggleDarkTheme.isChecked = context!!.defaultSharedPreferences.getBoolean(App.TOGGLE_DARKTHEME, false)
+            val prefToggleDarkTheme = findPreference(getString(R.string.pref_key_night))
+            prefToggleDarkTheme?.onPreferenceChangeListener = modeChangeListener
+
 
             initSelectLanguageList()
         }
@@ -181,6 +185,35 @@ class AppSettingsActivity : BaseActivity() {
         private fun resetCertificates() {
             if (CustomCertManager.resetCertificates(activity!!))
                 Snackbar.make(view!!, getString(R.string.app_settings_reset_certificates_success), Snackbar.LENGTH_LONG).show()
+        }
+
+        private val modeChangeListener = object : Preference.OnPreferenceChangeListener {
+            override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
+                Log.i("newValue", newValue.toString())
+                newValue as? String
+                when (newValue) {
+                    getString(R.string.pref_night_on) -> {
+                        updateTheme(AppCompatDelegate.MODE_NIGHT_YES)
+                    }
+                    getString(R.string.pref_night_off) -> {
+                        updateTheme(AppCompatDelegate.MODE_NIGHT_NO)
+                    }
+                    else -> {
+                        if (BuildCompat.isAtLeastQ()) {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        } else {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
+                        }
+                    }
+                }
+                return true
+            }
+        }
+
+        private fun updateTheme(nightMode: Int): Boolean {
+            AppCompatDelegate.setDefaultNightMode(nightMode)
+            requireActivity().recreate()
+            return true
         }
 
 
