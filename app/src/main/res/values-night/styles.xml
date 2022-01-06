@@ -29,7 +29,7 @@
     <!-- dialogs -->
 
     <style name="AppTheme.Dialog.Alert" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/orangeA700</item>
+        <item name="colorAccent">@color/blueA700</item>
     </style>
 
 
@@ -76,14 +76,14 @@
     <!-- widgets -->
 
     <style name="tablayout" parent="Base.Widget.Design.TabLayout">
-        <item name="android:background">@color/light_green700</item>
+        <item name="android:background">@color/light_orange700</item>
     </style>
 
     <style name="toolbar_theme">
         <item name="android:textColorSecondary">@android:color/white</item>
     </style>
     <style name="toolbar_style" parent="Widget.AppCompat.Toolbar">
-        <item name="android:background">@color/light_green700</item>
+        <item name="android:background">@color/light_orange700</item>
         <item name="titleTextColor">@android:color/white</item>
     </style>
 
@@ -92,7 +92,7 @@
 
     <style name="TextView.Heading" parent="AppTheme">
         <item name="android:textSize">22sp</item>
-        <item name="android:textColor">@color/orangeA700</item>
+        <item name="android:textColor">@color/blueA700</item>
     </style>
 
 </resources>

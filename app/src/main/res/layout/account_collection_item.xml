@@ -68,6 +68,6 @@
         android:id="@+id/color"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        tools:background="@color/green700" />
+        tools:background="@color/light_orange700"/>
 
 </LinearLayout>
