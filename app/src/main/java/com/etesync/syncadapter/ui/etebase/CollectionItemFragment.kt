@@ -231,14 +231,17 @@ class PrettyFragment : Fragment() {
         when (cachedCollection.collectionType) {
             Constants.ETEBASE_TYPE_ADDRESS_BOOK -> {
                 v = inflater.inflate(R.layout.contact_info, container, false)
+                v.setBackgroundColor(getResources().getColor(R.color.colorBackground))
                 asyncTask = loadContactTask(v)
             }
             Constants.ETEBASE_TYPE_CALENDAR -> {
                 v = inflater.inflate(R.layout.event_info, container, false)
+                v.setBackgroundColor(getResources().getColor(R.color.colorBackground))
                 asyncTask = loadEventTask(v)
             }
             Constants.ETEBASE_TYPE_TASKS -> {
                 v = inflater.inflate(R.layout.task_info, container, false)
+                v.setBackgroundColor(getResources().getColor(R.color.colorBackground))
                 asyncTask = loadTaskTask(v)
             }
         }
