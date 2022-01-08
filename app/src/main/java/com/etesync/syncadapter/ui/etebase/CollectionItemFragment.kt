@@ -205,6 +205,7 @@ class TextFragment : Fragment() {
         val tv = v.findViewById<View>(R.id.content) as TextView
 
         tv.text = content
+        tv.setBackgroundColor(getResources().getColor(R.color.colorBackground))
 
         return v
     }
